@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing Page</title>
+    <style>
+        .dashboard {
+            border: 1px solid rgb(168, 103, 163);
+            padding: 30px;
+            margin: 10px 0;
+        }
+        .user-list {
+            border: 2px solid #8f8212;
+            padding: 30px;
+            margin-top: 20px;
+        }
+        .user-list ul {
+            list-style: none;
+            padding: 10px;
+        }
+        .user-list li {
+            padding: 5px 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome To The Members Details Page</h1>
+    
+    <div class="dashboard">
+        <h2>Dashboard</h2>
+        <p>This is your dashboard for members registered.</p>
+    </div>
+
+    <div class="user-list">
+        <h2>Members List</h2>
+        <ol>
+            {% for user in users %}
+                <li>
+                    Username: {{ user.username }}<br>
+                    First Name: {{ user.first_name }}<br>
+                    Last Name: {{ user.last_name }}<br>
+                    Email: {{ user.email }}
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+</body>
+</html>
